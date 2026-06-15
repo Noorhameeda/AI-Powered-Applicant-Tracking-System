@@ -1,0 +1,248 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 900, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Deployed on Vercel + Render + MongoDB Atlas</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: c1-bg
+    elementType: shape
+    bounds: [60, 120, 370, 220]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: c1-icon
+    elementType: icon
+    bounds: [80, 140, 40, 40]
+    iconName: "fas:globe"
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: c1-title
+    elementType: text
+    bounds: [130, 140, 280, 30]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Frontend</strong></p>
+  - elementId: c1-body
+    elementType: text
+    bounds: [80, 190, 330, 130]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;">&#9632;</span> Vercel Edge Network</p>
+        <p><span style="color:$accent;">&#9632;</span> Global CDN</p>
+        <p><span style="color:$accent;">&#9632;</span> Auto-deploy on push</p>
+        <p><span style="color:$accent;">&#9632;</span> Preview deployments</p>
+  - elementId: c2-bg
+    elementType: shape
+    bounds: [455, 120, 370, 220]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: c2-icon
+    elementType: icon
+    bounds: [475, 140, 40, 40]
+    iconName: "fas:server"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: c2-title
+    elementType: text
+    bounds: [525, 140, 280, 30]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Backend</strong></p>
+  - elementId: c2-body
+    elementType: text
+    bounds: [475, 190, 330, 130]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;">&#9632;</span> Render.com</p>
+        <p><span style="color:$accent;">&#9632;</span> Node.js + Express</p>
+        <p><span style="color:$accent;">&#9632;</span> Auto-deploy on PR</p>
+        <p><span style="color:$accent;">&#9632;</span> Environment variables</p>
+  - elementId: c3-bg
+    elementType: shape
+    bounds: [850, 120, 370, 220]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: c3-icon
+    elementType: icon
+    bounds: [870, 140, 40, 40]
+    iconName: "fas:database"
+    fill:
+      type: solid
+      color: "$info"
+  - elementId: c3-title
+    elementType: text
+    bounds: [920, 140, 280, 30]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Database</strong></p>
+  - elementId: c3-body
+    elementType: text
+    bounds: [870, 190, 330, 130]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;">&#9632;</span> MongoDB Atlas</p>
+        <p><span style="color:$accent;">&#9632;</span> M10 Cluster</p>
+        <p><span style="color:$accent;">&#9632;</span> Automated backups</p>
+        <p><span style="color:$accent;">&#9632;</span> Connection pooling</p>
+  - elementId: c4-bg
+    elementType: shape
+    bounds: [60, 370, 560, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: c4-icon
+    elementType: icon
+    bounds: [80, 390, 40, 40]
+    iconName: "fas:cloud"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: c4-title
+    elementType: text
+    bounds: [130, 390, 300, 30]
+    content:
+      fontSize: 20
+      color: "$white"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>AWS S3 Storage</strong></p>
+  - elementId: c4-body
+    elementType: text
+    bounds: [80, 435, 520, 80]
+    content:
+      fontSize: 14
+      color: "$light"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>Bucket: ats-resumes-prod | Region: us-east-1</p>
+        <p>Server-side encryption (AES-256), versioning enabled</p>
+        <p>Presigned URLs with 15-min expiry for secure access</p>
+  - elementId: c5-bg
+    elementType: shape
+    bounds: [660, 370, 560, 160]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: c5-icon
+    elementType: icon
+    bounds: [680, 390, 40, 40]
+    iconName: "fas:wand-magic-sparkles"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: c5-title
+    elementType: text
+    bounds: [730, 390, 300, 30]
+    content:
+      fontSize: 20
+      color: "$white"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Google Gemini AI</strong></p>
+  - elementId: c5-body
+    elementType: text
+    bounds: [680, 435, 520, 80]
+    content:
+      fontSize: 14
+      color: "$light"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>Model: gemini-1.5-pro | Temperature: 0.3</p>
+        <p>JSON-structured output for consistent parsing</p>
+        <p>Cached analysis results to minimize API costs</p>
+  - elementId: bottom-bar
+    elementType: shape
+    bounds: [60, 570, 1160, 90]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: bottom-text
+    elementType: text
+    bounds: [80, 580, 1120, 70]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><strong>CI/CD Pipeline:</strong> GitHub Actions → Lint → Unit Tests → Build → Deploy to Vercel/Render → Smoke Tests → Production</p>

@@ -1,0 +1,148 @@
+pageType: table_of_contents
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 40, 400, 50]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>AGENDA</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 95, 80, 4]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: ch1-num
+    elementType: text
+    bounds: [80, 160, 100, 70]
+    content:
+      fontSize: 56
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>01</strong></p>
+  - elementId: ch1-title
+    elementType: text
+    bounds: [180, 165, 400, 35]
+    content:
+      fontSize: 24
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>Project Overview</strong></p>
+  - elementId: ch1-desc
+    elementType: text
+    bounds: [180, 205, 400, 28]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p>Business problem, solution, system goals</p>
+  - elementId: ch1-line
+    elementType: shape
+    bounds: [80, 260, 520, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+  - elementId: ch2-num
+    elementType: text
+    bounds: [80, 300, 100, 70]
+    content:
+      fontSize: 56
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>02</strong></p>
+  - elementId: ch2-title
+    elementType: text
+    bounds: [180, 305, 400, 35]
+    content:
+      fontSize: 24
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>Technical Architecture</strong></p>
+  - elementId: ch2-desc
+    elementType: text
+    bounds: [180, 345, 400, 28]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p>Database, AI module, security, APIs</p>
+  - elementId: ch2-line
+    elementType: shape
+    bounds: [80, 400, 520, 1]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+  - elementId: ch3-num
+    elementType: text
+    bounds: [80, 440, 100, 70]
+    content:
+      fontSize: 56
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>03</strong></p>
+  - elementId: ch3-title
+    elementType: text
+    bounds: [180, 445, 400, 35]
+    content:
+      fontSize: 24
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>Implementation Plan</strong></p>
+  - elementId: ch3-desc
+    elementType: text
+    bounds: [180, 485, 400, 28]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p>Team structure, timeline, deployment</p>
+  - elementId: right-accent
+    elementType: shape
+    bounds: [720, 100, 500, 520]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: right-icon
+    elementType: icon
+    bounds: [906, 300, 128, 128]
+    iconName: "fas:layer-group"
+    fill:
+      type: solid
+      color: "#FFFFFF20"

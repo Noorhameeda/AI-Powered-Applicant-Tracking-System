@@ -1,0 +1,50 @@
+pageType: cover
+background:
+  type: solid
+  color: "$dark"
+elements:
+  - elementId: accent-line
+    elementType: shape
+    bounds: [540, 220, 200, 4]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: title
+    elementType: text
+    bounds: [140, 250, 1000, 140]
+    content:
+      style: "$coverTitle"
+      align: [center, middle]
+      wrap: true
+      text: |
+        <p><strong>AI-POWERED APPLICANT TRACKING SYSTEM</strong></p>
+  - elementId: subtitle
+    elementType: text
+    bounds: [240, 420, 800, 40]
+    content:
+      fontSize: 22
+      color: "$light"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>Complete Architecture &amp; Technical Design</p>
+  - elementId: meta-line
+    elementType: text
+    bounds: [340, 480, 600, 30]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>5 Developers  |  4 Weeks  |  MERN Stack + Gemini AI</p>
+  - elementId: bottom-bar
+    elementType: shape
+    bounds: [0, 700, 1280, 20]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"

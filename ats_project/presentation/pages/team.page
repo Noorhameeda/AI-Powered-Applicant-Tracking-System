@@ -1,0 +1,228 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 800, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>5 Developers, 4 Domains, 28 Days</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: d1-bg
+    elementType: shape
+    bounds: [60, 120, 560, 120]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: d1-icon
+    elementType: icon
+    bounds: [80, 140, 36, 36]
+    iconName: "fas:lock"
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: d1-title
+    elementType: text
+    bounds: [130, 135, 300, 28]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Dev 1: Auth &amp; Security</strong></p>
+  - elementId: d1-body
+    elementType: text
+    bounds: [130, 168, 470, 60]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>JWT authentication, RBAC middleware, bcrypt hashing, Helmet.js, rate limiting, input validation, XSS protection</p>
+  - elementId: d2-bg
+    elementType: shape
+    bounds: [660, 120, 560, 120]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: d2-icon
+    elementType: icon
+    bounds: [680, 140, 36, 36]
+    iconName: "fas:briefcase"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: d2-title
+    elementType: text
+    bounds: [730, 135, 300, 28]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Dev 2: Job Management</strong></p>
+  - elementId: d2-body
+    elementType: text
+    bounds: [730, 168, 470, 60]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>Job CRUD, search/filter, application system, recruiter dashboard, job pipeline management</p>
+  - elementId: d3-bg
+    elementType: shape
+    bounds: [60, 270, 560, 120]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: d3-icon
+    elementType: icon
+    bounds: [80, 290, 36, 36]
+    iconName: "fas:cloud-upload-alt"
+    fill:
+      type: solid
+      color: "$info"
+  - elementId: d3-title
+    elementType: text
+    bounds: [130, 285, 300, 28]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Dev 3: Resume &amp; AWS</strong></p>
+  - elementId: d3-body
+    elementType: text
+    bounds: [130, 318, 470, 60]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>Multer file upload, AWS S3 integration, resume management, presigned URLs, file validation</p>
+  - elementId: d4-bg
+    elementType: shape
+    bounds: [660, 270, 560, 120]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: d4-icon
+    elementType: icon
+    bounds: [680, 290, 36, 36]
+    iconName: "fas:robot"
+    fill:
+      type: solid
+      color: "$success"
+  - elementId: d4-title
+    elementType: text
+    bounds: [730, 285, 300, 28]
+    content:
+      fontSize: 20
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Dev 4: AI Integration</strong></p>
+  - elementId: d4-body
+    elementType: text
+    bounds: [730, 318, 470, 60]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>Gemini API integration, prompt engineering, scoring algorithm, candidate ranking, AI summaries</p>
+  - elementId: d5-bg
+    elementType: shape
+    bounds: [360, 420, 560, 120]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: d5-icon
+    elementType: icon
+    bounds: [380, 440, 36, 36]
+    iconName: "fas:code"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: d5-title
+    elementType: text
+    bounds: [430, 435, 300, 28]
+    content:
+      fontSize: 20
+      color: "$white"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Dev 5: Frontend &amp; Deploy</strong></p>
+  - elementId: d5-body
+    elementType: text
+    bounds: [430, 468, 470, 60]
+    content:
+      fontSize: 14
+      color: "$light"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [left, top]
+      text: |
+        <p>React UI with Material UI, responsive design, Vercel deployment, E2E testing with Cypress</p>
+  - elementId: bottom-text
+    elementType: text
+    bounds: [60, 580, 1160, 60]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.5
+      align: [center, top]
+      text: |
+        <p>Each developer owns their domain end-to-end: schema design, API implementation, and integration testing.</p>

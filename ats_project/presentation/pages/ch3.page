@@ -1,0 +1,50 @@
+pageType: chapter
+background:
+  type: solid
+  color: "$dark"
+elements:
+  - elementId: chapter-num
+    elementType: text
+    bounds: [60, 160, 300, 120]
+    content:
+      fontSize: 96
+      color: "#FFFFFF30"
+      fontFamily: "Liter"
+      align: [left, top]
+      wrap: false
+      text: |
+        <p><strong>03</strong></p>
+  - elementId: chapter-title
+    elementType: text
+    bounds: [60, 300, 700, 60]
+    content:
+      style: "$chapterTitle"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Implementation Plan</strong></p>
+  - elementId: accent-bar
+    elementType: shape
+    bounds: [60, 380, 120, 4]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: chapter-desc
+    elementType: text
+    bounds: [60, 410, 600, 35]
+    content:
+      fontSize: 20
+      color: "$light"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p>Team structure, timeline, and deployment strategy</p>
+  - elementId: right-accent
+    elementType: shape
+    bounds: [1100, 0, 180, 720]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
