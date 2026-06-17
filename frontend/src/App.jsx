@@ -1,5 +1,7 @@
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { BrowserRouter } from 'react-router-dom'
+import AppRoutes from './routes/AppRoutes'
 
 const queryClient = new QueryClient()
 
@@ -29,10 +31,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <main style={{ minHeight: '100vh', padding: '32px' }}>
-          <h1>AI Powered Applicant Tracking System</h1>
-          <p>React, Vite, MUI, Router, Axios, React Query, and React Hook Form are ready.</p>
-        </main>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
       </ThemeProvider>
     </QueryClientProvider>
   )
