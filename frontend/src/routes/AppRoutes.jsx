@@ -1,13 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import DashboardLayout from '../layouts/DashboardLayout'
 import ProtectedLayout from '../layouts/ProtectedLayout'
+import AdminDashboard from '../pages/AdminDashboard'
+import ApplicantDashboard from '../pages/ApplicantDashboard'
 import LandingPage from '../pages/LandingPage'
 import Login from '../pages/Login'
+import RecruiterDashboard from '../pages/RecruiterDashboard'
 import Register from '../pages/Register'
-
-function PlaceholderDashboard({ title }) {
-  return <h1>{title}</h1>
-}
 
 function AppRoutes() {
   return (
@@ -18,9 +17,9 @@ function AppRoutes() {
       <Route element={<ProtectedLayout />}>
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Navigate to="/dashboard/applicant" replace />} />
-          <Route path="/dashboard/applicant" element={<PlaceholderDashboard title="Applicant Dashboard" />} />
-          <Route path="/dashboard/recruiter" element={<PlaceholderDashboard title="Recruiter Dashboard" />} />
-          <Route path="/dashboard/admin" element={<PlaceholderDashboard title="Admin Dashboard" />} />
+          <Route path="/dashboard/applicant" element={<ApplicantDashboard />} />
+          <Route path="/dashboard/recruiter" element={<RecruiterDashboard />} />
+          <Route path="/dashboard/admin" element={<AdminDashboard />} />
         </Route>
       </Route>
     </Routes>
