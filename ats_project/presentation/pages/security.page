@@ -1,0 +1,138 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 600, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Security at Every Layer</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: sec-table
+    elementType: table
+    bounds: [60, 110, 1160, 400]
+    columnWidths: [0.22, 0.20, 0.58]
+    rowHeights: [0.11, 0.1113, 0.1113, 0.1113, 0.1113, 0.1113, 0.1113, 0.1113, 0.1111]
+    style: "$default"
+    rows:
+      - - content: {text: "Layer", fontSize: 15}
+        - content: {text: "Technology", fontSize: 15}
+        - content: {text: "Implementation", fontSize: 15}
+      - - content:
+            text: |
+              <p>Authentication</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>JWT</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Access token (15min) + Refresh token (7days) in httpOnly cookies</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Password</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>bcrypt</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>12 salt rounds, one-way hash, never store plaintext</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>HTTP Headers</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Helmet.js</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>HSTS, X-Frame-Options, CSP, X-XSS-Protection</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Rate Limiting</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>express-rate-limit</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>100 req/15min per IP, 5 login attempts/min</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Input Validation</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Joi</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Schema validation on all API inputs, sanitize user data</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>NoSQL Injection</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>mongoose-sanitize</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Sanitize query operators ($gt, $ne) from user input</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>XSS Protection</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>xss-clean</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Strip malicious HTML, sanitize user-generated content</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>CORS</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>cors</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Whitelist Vercel domains only, block unauthorized origins</p>
+            fontSize: 14
+  - elementId: note
+    elementType: text
+    bounds: [60, 530, 1160, 50]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [left, top]
+      text: |
+        <p>All API endpoints use HTTPS. File uploads validated for type (PDF only) and size (max 5MB). AWS S3 credentials stored as environment variables, never in code.</p>

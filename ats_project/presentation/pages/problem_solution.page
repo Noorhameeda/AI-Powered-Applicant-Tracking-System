@@ -1,0 +1,177 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 900, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>The Hiring Challenge: 23 Hours Lost Per Hire</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: left-label
+    elementType: text
+    bounds: [60, 110, 200, 30]
+    content:
+      fontSize: 16
+      color: "$danger"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>THE PROBLEM</strong></p>
+  - elementId: left-content
+    elementType: text
+    bounds: [60, 150, 540, 240]
+    content:
+      fontSize: 18
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;"><strong>23 hours</strong></span> average time spent screening per hire</p>
+        <p><span style="color:$accent;"><strong>67%</strong></span> of resumes are unqualified yet reviewed</p>
+        <p><span style="color:$accent;"><strong>42%</strong></span> of candidates ghost due to slow response</p>
+        <p><span style="color:$accent;"><strong>Unconscious bias</strong></span> in manual evaluation</p>
+  - elementId: divider
+    elementType: shape
+    bounds: [620, 110, 2, 340]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+  - elementId: right-label
+    elementType: text
+    bounds: [640, 110, 200, 30]
+    content:
+      fontSize: 16
+      color: "$success"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>OUR SOLUTION</strong></p>
+  - elementId: right-content
+    elementType: text
+    bounds: [640, 150, 580, 240]
+    content:
+      fontSize: 18
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$success;"><strong>AI Resume Parsing</strong></span> with Gemini API</p>
+        <p><span style="color:$success;"><strong>Semantic Matching</strong></span> skills to requirements</p>
+        <p><span style="color:$success;"><strong>Weighted Scoring</strong></span> across 4 dimensions</p>
+        <p><span style="color:$success;"><strong>Automated Ranking</strong></span> for recruiters</p>
+  - elementId: metrics-bg
+    elementType: shape
+    bounds: [60, 480, 1160, 180]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: m1-num
+    elementType: text
+    bounds: [80, 500, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>83%</strong></p>
+  - elementId: m1-label
+    elementType: text
+    bounds: [80, 565, 250, 60]
+    content:
+      fontSize: 14
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Reduction in</p>
+        <p>screening time</p>
+  - elementId: m2-num
+    elementType: text
+    bounds: [370, 500, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>70%</strong></p>
+  - elementId: m2-label
+    elementType: text
+    bounds: [370, 565, 250, 60]
+    content:
+      fontSize: 14
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Faster</p>
+        <p>time-to-shortlist</p>
+  - elementId: m3-num
+    elementType: text
+    bounds: [660, 500, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>85%</strong></p>
+  - elementId: m3-label
+    elementType: text
+    bounds: [660, 565, 250, 60]
+    content:
+      fontSize: 14
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Candidate</p>
+        <p>response rate</p>
+  - elementId: m4-num
+    elementType: text
+    bounds: [950, 500, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>8.5/10</strong></p>
+  - elementId: m4-label
+    elementType: text
+    bounds: [950, 565, 250, 60]
+    content:
+      fontSize: 14
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Hiring quality</p>
+        <p>score</p>

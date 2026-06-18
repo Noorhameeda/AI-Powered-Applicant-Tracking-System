@@ -1,0 +1,64 @@
+pageType: final
+background:
+  type: solid
+  color: "$dark"
+elements:
+  - elementId: accent-line-top
+    elementType: shape
+    bounds: [540, 180, 200, 4]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: main-title
+    elementType: text
+    bounds: [140, 220, 1000, 80]
+    content:
+      fontSize: 56
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, middle]
+      letterSpacing: 3
+      wrap: false
+      text: |
+        <p><strong>READY TO BUILD</strong></p>
+  - elementId: subtitle
+    elementType: text
+    bounds: [240, 320, 800, 40]
+    content:
+      fontSize: 22
+      color: "$light"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>AI-Powered Applicant Tracking System</p>
+  - elementId: points
+    elementType: text
+    bounds: [290, 400, 700, 80]
+    content:
+      fontSize: 18
+      color: "$light"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [center, top]
+      text: |
+        <p>Smarter hiring decisions  ·  Faster time-to-hire  ·  Better candidate experience</p>
+  - elementId: meta
+    elementType: text
+    bounds: [340, 520, 600, 30]
+    content:
+      fontSize: 16
+      color: "$secondary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>5 Developers  |  4 Weeks  |  MERN + Gemini AI</p>
+  - elementId: bottom-bar
+    elementType: shape
+    bounds: [0, 700, 1280, 20]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"

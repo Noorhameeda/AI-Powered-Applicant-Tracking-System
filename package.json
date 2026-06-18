@@ -17,5 +17,12 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
+
+  "private": true,
+  "description": "Frontend prototype for an AI-powered applicant tracking system.",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node scripts/check.js"
+
   }
 }

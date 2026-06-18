@@ -1,0 +1,171 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 900, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>MongoDB Schema: 8 Collections, Fully Indexed</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: db-table
+    elementType: table
+    bounds: [60, 110, 1160, 400]
+    columnWidths: [0.18, 0.22, 0.30, 0.30]
+    rowHeights: [0.11, 0.1113, 0.1113, 0.1113, 0.1113, 0.1113, 0.1113, 0.1113, 0.1111]
+    style: "$default"
+    rows:
+      - - content: {text: "Collection", fontSize: 15}
+        - content: {text: "Key Fields", fontSize: 15}
+        - content: {text: "Purpose", fontSize: 15}
+        - content: {text: "Indexes", fontSize: 15}
+      - - content:
+            text: |
+              <p>Users</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>email, password, role, isActive</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Authentication &amp; RBAC</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>email (unique), role</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Jobs</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>title, dept, type, status, postedBy</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Job postings management</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>status+createdAt (compound)</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Applications</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>jobId, applicantId, status, aiScore</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Candidate applications</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>jobId+applicantId (unique)</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Resumes</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>userId, fileUrl, s3Key, extractedText</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Resume file storage metadata</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>userId</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>AIAnalysis</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>applicationId, overallScore, skillGaps</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>AI scoring results</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>overallScore (desc), applicationId</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Notifications</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>userId, type, isRead, createdAt</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>User notifications</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>userId+isRead (compound)</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>Emails</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>to, subject, template, status</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Email delivery tracking</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>status+sentAt</p>
+            fontSize: 14
+      - - content:
+            text: |
+              <p>ActivityLogs</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>userId, action, entity, timestamp</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>Audit trail</p>
+            fontSize: 14
+        - content:
+            text: |
+              <p>timestamp (desc)</p>
+            fontSize: 14
+  - elementId: note
+    elementType: text
+    bounds: [60, 530, 1160, 40]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [left, top]
+      text: |
+        <p>All relationships use ObjectId references. Compound indexes prevent duplicate applications. Text indexes enable full-text search on job descriptions.</p>

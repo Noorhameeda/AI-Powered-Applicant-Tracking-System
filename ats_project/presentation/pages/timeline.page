@@ -1,0 +1,259 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 700, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>4-Week Sprint Schedule</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: timeline-line
+    elementType: shape
+    bounds: [60, 200, 1160, 4]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$light"
+  - elementId: dot1
+    elementType: shape
+    bounds: [185, 192, 20, 20]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: dot2
+    elementType: shape
+    bounds: [485, 192, 20, 20]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: dot3
+    elementType: shape
+    bounds: [785, 192, 20, 20]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: dot4
+    elementType: shape
+    bounds: [1085, 192, 20, 20]
+    shapeName: ellipse
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: w1-title
+    elementType: text
+    bounds: [60, 110, 280, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Week 1: Foundation</strong></p>
+  - elementId: w1-body
+    elementType: text
+    bounds: [60, 230, 280, 180]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [center, top]
+      text: |
+        <p>GitHub repo setup</p>
+        <p>MongoDB schemas</p>
+        <p>AWS S3 bucket</p>
+        <p>React project init</p>
+        <p>Gemini API testing</p>
+        <p>Auth system scaffold</p>
+  - elementId: w2-title
+    elementType: text
+    bounds: [360, 110, 280, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Week 2: Core Features</strong></p>
+  - elementId: w2-body
+    elementType: text
+    bounds: [360, 230, 280, 180]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [center, top]
+      text: |
+        <p>JWT auth complete</p>
+        <p>Job CRUD + search</p>
+        <p>Resume upload to S3</p>
+        <p>AI scoring engine</p>
+        <p>RBAC middleware</p>
+        <p>Application system</p>
+  - elementId: w3-title
+    elementType: text
+    bounds: [660, 110, 280, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Week 3: Integration</strong></p>
+  - elementId: w3-body
+    elementType: text
+    bounds: [660, 230, 280, 180]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [center, top]
+      text: |
+        <p>Email notifications</p>
+        <p>Nodemailer setup</p>
+        <p>AI prompt tuning</p>
+        <p>UI polish + responsive</p>
+        <p>Error handling</p>
+        <p>Integration tests</p>
+  - elementId: w4-title
+    elementType: text
+    bounds: [960, 110, 280, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Week 4: Deploy</strong></p>
+  - elementId: w4-body
+    elementType: text
+    bounds: [960, 230, 280, 180]
+    content:
+      fontSize: 14
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [center, top]
+      text: |
+        <p>E2E tests (Cypress)</p>
+        <p>Security audit</p>
+        <p>Performance testing</p>
+        <p>Vercel deployment</p>
+        <p>Render deployment</p>
+        <p>Production smoke test</p>
+  - elementId: metrics-bg
+    elementType: shape
+    bounds: [60, 450, 1160, 200]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: m1-num
+    elementType: text
+    bounds: [80, 470, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>28</strong></p>
+  - elementId: m1-label
+    elementType: text
+    bounds: [80, 540, 250, 40]
+    content:
+      fontSize: 16
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Days total</p>
+  - elementId: m2-num
+    elementType: text
+    bounds: [350, 470, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>4</strong></p>
+  - elementId: m2-label
+    elementType: text
+    bounds: [350, 540, 250, 40]
+    content:
+      fontSize: 16
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Sprints</p>
+  - elementId: m3-num
+    elementType: text
+    bounds: [620, 470, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>25+</strong></p>
+  - elementId: m3-label
+    elementType: text
+    bounds: [620, 540, 250, 40]
+    content:
+      fontSize: 16
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>API endpoints</p>
+  - elementId: m4-num
+    elementType: text
+    bounds: [890, 470, 250, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>100%</strong></p>
+  - elementId: m4-label
+    elementType: text
+    bounds: [890, 540, 250, 40]
+    content:
+      fontSize: 16
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, top]
+      lineHeight: 1.4
+      text: |
+        <p>Test coverage target</p>

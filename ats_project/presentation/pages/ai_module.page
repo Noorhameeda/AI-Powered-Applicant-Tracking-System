@@ -1,0 +1,238 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 800, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>AI Scoring Engine: Weighted Algorithm</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: w1-bg
+    elementType: shape
+    bounds: [60, 120, 270, 200]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: w1-pct
+    elementType: text
+    bounds: [60, 130, 270, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>40%</strong></p>
+  - elementId: w1-title
+    elementType: text
+    bounds: [60, 195, 270, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Skills Match</strong></p>
+  - elementId: w1-desc
+    elementType: text
+    bounds: [70, 230, 250, 80]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [center, top]
+      text: |
+        <p>Technical &amp; soft skills alignment against job requirements</p>
+  - elementId: w2-bg
+    elementType: shape
+    bounds: [355, 120, 270, 200]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: w2-pct
+    elementType: text
+    bounds: [355, 130, 270, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>30%</strong></p>
+  - elementId: w2-title
+    elementType: text
+    bounds: [355, 195, 270, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Experience Match</strong></p>
+  - elementId: w2-desc
+    elementType: text
+    bounds: [365, 230, 250, 80]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [center, top]
+      text: |
+        <p>Years and relevance of professional experience</p>
+  - elementId: w3-bg
+    elementType: shape
+    bounds: [650, 120, 270, 200]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: w3-pct
+    elementType: text
+    bounds: [650, 130, 270, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>15%</strong></p>
+  - elementId: w3-title
+    elementType: text
+    bounds: [650, 195, 270, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Education Match</strong></p>
+  - elementId: w3-desc
+    elementType: text
+    bounds: [660, 230, 250, 60]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [center, top]
+      text: |
+        <p>Degree level and field relevance to position requirements</p>
+  - elementId: w4-bg
+    elementType: shape
+    bounds: [945, 120, 270, 200]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: w4-pct
+    elementType: text
+    bounds: [945, 130, 270, 60]
+    content:
+      fontSize: 44
+      color: "$accent"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>15%</strong></p>
+  - elementId: w4-title
+    elementType: text
+    bounds: [945, 195, 270, 30]
+    content:
+      fontSize: 18
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p><strong>Projects Match</strong></p>
+  - elementId: w4-desc
+    elementType: text
+    bounds: [955, 230, 250, 60]
+    content:
+      fontSize: 14
+      color: "$secondary"
+      fontFamily: "Liter"
+      lineHeight: 1.4
+      align: [center, top]
+      text: |
+        <p>Portfolio project relevance and demonstrated complexity</p>
+  - elementId: formula-bg
+    elementType: shape
+    bounds: [60, 350, 1160, 70]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: formula-text
+    elementType: text
+    bounds: [80, 355, 1120, 60]
+    content:
+      fontSize: 18
+      color: "$white"
+      fontFamily: "Liter"
+      align: [center, middle]
+      wrap: false
+      text: |
+        <p>Score = (Skills x 0.40) + (Experience x 0.30) + (Education x 0.15) + (Projects x 0.15)</p>
+  - elementId: pipeline-label
+    elementType: text
+    bounds: [60, 445, 300, 30]
+    content:
+      fontSize: 16
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>AI PIPELINE</strong></p>
+  - elementId: pipeline
+    elementType: text
+    bounds: [60, 480, 1160, 130]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.7
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;"><strong>1. Parse</strong></span>  PDF resume → text extraction (pdf-parse)   <span style="color:$accent;"><strong>2. Extract</strong></span>  Skills, experience, education (Gemini API)   <span style="color:$accent;"><strong>3. Match</strong></span>  Semantic comparison with job requirements</p>
+        <p><span style="color:$accent;"><strong>4. Score</strong></span>  Weighted algorithm across 4 dimensions   <span style="color:$accent;"><strong>5. Rank</strong></span>  Sort candidates by overall score   <span style="color:$accent;"><strong>6. Summarize</strong></span>  AI-generated summary + skill gaps</p>

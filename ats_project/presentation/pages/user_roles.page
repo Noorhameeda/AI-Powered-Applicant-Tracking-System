@@ -1,0 +1,171 @@
+pageType: content
+background:
+  type: solid
+  color: "$background"
+elements:
+  - elementId: title
+    elementType: text
+    bounds: [60, 35, 700, 45]
+    content:
+      style: "$title"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Three Users, One Powerful Platform</strong></p>
+  - elementId: title-line
+    elementType: shape
+    bounds: [60, 85, 60, 3]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card1-bg
+    elementType: shape
+    bounds: [60, 120, 370, 340]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: card1-icon
+    elementType: icon
+    bounds: [80, 140, 36, 36]
+    iconName: "fas:shield-halved"
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: card1-title
+    elementType: text
+    bounds: [80, 190, 330, 35]
+    content:
+      fontSize: 22
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Administrator</strong></p>
+  - elementId: card1-body
+    elementType: text
+    bounds: [80, 235, 330, 200]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;">&#9632;</span> User management (CRUD)</p>
+        <p><span style="color:$accent;">&#9632;</span> System analytics dashboard</p>
+        <p><span style="color:$accent;">&#9632;</span> Role assignment</p>
+        <p><span style="color:$accent;">&#9632;</span> Platform configuration</p>
+        <p><span style="color:$accent;">&#9632;</span> Activity monitoring</p>
+  - elementId: card2-bg
+    elementType: shape
+    bounds: [455, 120, 370, 340]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: card2-icon
+    elementType: icon
+    bounds: [475, 140, 36, 36]
+    iconName: "fas:briefcase"
+    fill:
+      type: solid
+      color: "$accent"
+  - elementId: card2-title
+    elementType: text
+    bounds: [475, 190, 330, 35]
+    content:
+      fontSize: 22
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Recruiter</strong></p>
+  - elementId: card2-body
+    elementType: text
+    bounds: [475, 235, 330, 200]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;">&#9632;</span> Create &amp; manage job posts</p>
+        <p><span style="color:$accent;">&#9632;</span> AI candidate ranking</p>
+        <p><span style="color:$accent;">&#9632;</span> Application pipeline</p>
+        <p><span style="color:$accent;">&#9632;</span> Interview scheduling</p>
+        <p><span style="color:$accent;">&#9632;</span> Send email notifications</p>
+  - elementId: card3-bg
+    elementType: shape
+    bounds: [850, 120, 370, 340]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$white"
+    border:
+      style: solid
+      width: 1
+      color: "$light"
+  - elementId: card3-icon
+    elementType: icon
+    bounds: [870, 140, 36, 36]
+    iconName: "fas:user"
+    fill:
+      type: solid
+      color: "$info"
+  - elementId: card3-title
+    elementType: text
+    bounds: [870, 190, 330, 35]
+    content:
+      fontSize: 22
+      color: "$primary"
+      fontFamily: "Liter"
+      align: [left, middle]
+      wrap: false
+      text: |
+        <p><strong>Applicant</strong></p>
+  - elementId: card3-body
+    elementType: text
+    bounds: [870, 235, 330, 200]
+    content:
+      fontSize: 16
+      color: "$text"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><span style="color:$accent;">&#9632;</span> Browse job listings</p>
+        <p><span style="color:$accent;">&#9632;</span> Upload resume (PDF)</p>
+        <p><span style="color:$accent;">&#9632;</span> Apply to positions</p>
+        <p><span style="color:$accent;">&#9632;</span> Track application status</p>
+        <p><span style="color:$accent;">&#9632;</span> Receive notifications</p>
+  - elementId: bottom-bar
+    elementType: shape
+    bounds: [60, 490, 1160, 170]
+    shapeName: rect
+    fill:
+      type: solid
+      color: "$primary"
+  - elementId: bottom-text
+    elementType: text
+    bounds: [100, 510, 1080, 130]
+    content:
+      fontSize: 18
+      color: "$white"
+      fontFamily: "Liter"
+      lineHeight: 1.6
+      align: [left, top]
+      text: |
+        <p><strong>RBAC Implementation:</strong> Role-Based Access Control ensures each user only accesses permitted features. JWT tokens with 15-minute expiry, bcrypt password hashing with 12 salt rounds, and middleware protection on all sensitive endpoints.</p>
