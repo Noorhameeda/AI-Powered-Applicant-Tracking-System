@@ -1,28 +1,26 @@
 {
   "name": "ai-powered-applicant-tracking-system",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "AI Powered Applicant Tracking System",
+  "main": "server.js",
+  "type": "commonjs",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^9.7.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
-
-  "private": true,
-  "description": "Frontend prototype for an AI-powered applicant tracking system.",
-  "scripts": {
-    "build": "node scripts/build.js",
-    "test": "node scripts/check.js"
-
   }
 }
