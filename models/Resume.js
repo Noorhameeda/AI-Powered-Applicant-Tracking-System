@@ -1,15 +1,23 @@
 const mongoose = require("mongoose");
 
-const resumeSchema = new mongoose.Schema(
-{
+const resumeSchema = new mongoose.Schema({
   applicantId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+    ref: "User",
+    required: true,
   },
-  fileUrl: String,
-  extractedText: String
-},
-{ timestamps: true }
-);
+  fileUrl: {
+    type: String,
+    required: true,
+  },
+  extractedText: {
+    type: String,
+    default: "",
+  },
+  uploadedAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
 module.exports = mongoose.model("Resume", resumeSchema);
