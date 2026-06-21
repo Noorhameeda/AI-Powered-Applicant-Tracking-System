@@ -45,9 +45,31 @@ const userSchema = new mongoose.Schema(
       default: "",
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
 );
 
 userSchema.index({ email: 1 }, { unique: true });
+
+userSchema.virtual("jobs", {
+  ref: "Job",
+  localField: "_id",
+  foreignField: "recruiterId",
+});
+
+userSchema.virtual("applications", {
+  ref: "Application",
+  localField: "_id",
+  foreignField: "applicantId",
+});
+
+userSchema.virtual("resumes", {
+  ref: "Resume",
+  localField: "_id",
+  foreignField: "applicantId",
+});
 
 module.exports = mongoose.model("User", userSchema);
