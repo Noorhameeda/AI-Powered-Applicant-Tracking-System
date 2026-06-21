@@ -5,39 +5,49 @@ const applicationSchema = new mongoose.Schema(
     applicantId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
     jobId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Job",
-      required: true
+      required: true,
+    },
+    resumeId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Resume",
+      required: true,
     },
     status: {
       type: String,
-      enum: ["Pending", "Reviewing", "Shortlisted", "Rejected", "Selected"],
-      default: "Pending"
+      enum: ["Applied", "Reviewing", "Shortlisted", "Interview", "Selected", "Rejected"],
+      default: "Applied",
     },
     aiScore: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
+    appliedAt: {
+      type: Date,
+      default: Date.now,
+    },
   },
   {
     timestamps: true,
     toJSON: { virtuals: true },
-    toObject: { virtuals: true }
+    toObject: { virtuals: true },
   }
 );
 
 applicationSchema.index({ applicantId: 1, jobId: 1 }, { unique: true });
 applicationSchema.index({ jobId: 1 });
 applicationSchema.index({ applicantId: 1 });
+applicationSchema.index({ status: 1 });
 
 applicationSchema.virtual("aiAnalysis", {
   ref: "AIAnalysis",
   localField: "_id",
   foreignField: "applicationId",
-  justOne: true
+  justOne: true,
 });
 
 module.exports = mongoose.model("Application", applicationSchema);

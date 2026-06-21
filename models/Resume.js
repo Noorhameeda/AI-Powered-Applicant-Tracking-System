@@ -5,16 +5,20 @@ const resumeSchema = new mongoose.Schema(
     applicantId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
     fileUrl: {
       type: String,
-      required: true
+      required: true,
     },
     extractedText: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
+    uploadedAt: {
+      type: Date,
+      default: Date.now,
+    },
   },
   { timestamps: true }
 );
