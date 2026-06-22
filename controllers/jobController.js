@@ -15,7 +15,11 @@ const validateJobPayload = (payload) => {
     errors.push("Skills array is required");
   }
 
-  if (payload.salary === undefined || payload.salary === null || Number.isNaN(Number(payload.salary))) {
+  if (
+    payload.salary === undefined ||
+    payload.salary === null ||
+    Number.isNaN(Number(payload.salary))
+  ) {
     errors.push("Salary is required and must be a number");
   }
 
@@ -29,8 +33,12 @@ const validateJobPayload = (payload) => {
 const createJob = async (req, res) => {
   try {
     const errors = validateJobPayload(req.body);
+
     if (errors.length) {
-      return res.status(400).json({ message: "Validation failed", errors });
+      return res.status(400).json({
+        message: "Validation failed",
+        errors,
+      });
     }
 
     const job = await Job.create({
@@ -42,39 +50,64 @@ const createJob = async (req, res) => {
       recruiterId: req.user?._id,
     });
 
-    return res.status(201).json({ message: "Job created", job });
+    return res.status(201).json({
+      message: "Job created",
+      job,
+    });
   } catch (error) {
-    return res.status(500).json({ message: "Failed to create job", error: error.message });
+    return res.status(500).json({
+      message: "Failed to create job",
+      error: error.message,
+    });
   }
 };
 
 const getJobs = async (_req, res) => {
   try {
-    const jobs = await Job.find().populate("recruiterId", "name email role").sort({ createdAt: -1 });
+    const jobs = await Job.find()
+      .populate("recruiterId", "name email role")
+      .sort({ createdAt: -1 });
+
     return res.json({ jobs });
   } catch (error) {
-    return res.status(500).json({ message: "Failed to fetch jobs", error: error.message });
+    return res.status(500).json({
+      message: "Failed to fetch jobs",
+      error: error.message,
+    });
   }
 };
 
 const getJobById = async (req, res) => {
   try {
-    const job = await Job.findById(req.params.id).populate("recruiterId", "name email role");
+    const job = await Job.findById(req.params.id).populate(
+      "recruiterId",
+      "name email role"
+    );
+
     if (!job) {
-      return res.status(404).json({ message: "Job not found" });
+      return res.status(404).json({
+        message: "Job not found",
+      });
     }
 
     return res.json({ job });
   } catch (error) {
-    return res.status(400).json({ message: "Invalid job id", error: error.message });
+    return res.status(400).json({
+      message: "Invalid job id",
+      error: error.message,
+    });
   }
 };
 
 const updateJob = async (req, res) => {
   try {
     const errors = validateJobPayload(req.body);
+
     if (errors.length) {
-      return res.status(400).json({ message: "Validation failed", errors });
+      return res.status(400).json({
+        message: "Validation failed",
+        errors,
+      });
     }
 
     const job = await Job.findByIdAndUpdate(
@@ -86,29 +119,89 @@ const updateJob = async (req, res) => {
         salary: Number(req.body.salary),
         location: req.body.location,
       },
-      { new: true, runValidators: true }
+      {
+        new: true,
+        runValidators: true,
+      }
     );
 
     if (!job) {
-      return res.status(404).json({ message: "Job not found" });
+      return res.status(404).json({
+        message: "Job not found",
+      });
     }
 
-    return res.json({ message: "Job updated", job });
+    return res.json({
+      message: "Job updated",
+      job,
+    });
   } catch (error) {
-    return res.status(400).json({ message: "Failed to update job", error: error.message });
+    return res.status(400).json({
+      message: "Failed to update job",
+      error: error.message,
+    });
   }
 };
 
 const deleteJob = async (req, res) => {
   try {
     const job = await Job.findByIdAndDelete(req.params.id);
+
     if (!job) {
-      return res.status(404).json({ message: "Job not found" });
+      return res.status(404).json({
+        message: "Job not found",
+      });
     }
 
-    return res.json({ message: "Job deleted" });
+    return res.json({
+      message: "Job deleted",
+    });
   } catch (error) {
-    return res.status(400).json({ message: "Failed to delete job", error: error.message });
+    return res.status(400).json({
+      message: "Failed to delete job",
+      error: error.message,
+    });
+  }
+};
+
+// Text Search Jobs
+const searchJobs = async (req, res) => {
+  try {
+    const { keyword } = req.query;
+
+    if (!keyword) {
+      return res.status(400).json({
+        message: "Search keyword is required",
+      });
+    }
+
+    const jobs = await Job.find(
+      {
+        $text: {
+          $search: keyword,
+        },
+      },
+      {
+        score: {
+          $meta: "textScore",
+        },
+      }
+    ).sort({
+      score: {
+        $meta: "textScore",
+      },
+    });
+
+    return res.status(200).json({
+      success: true,
+      count: jobs.length,
+      jobs,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to search jobs",
+      error: error.message,
+    });
   }
 };
 
@@ -118,5 +211,6 @@ module.exports = {
   getJobById,
   updateJob,
   deleteJob,
+  searchJobs,
   validateJobPayload,
 };

@@ -5,13 +5,12 @@ const activityLogSchema = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
-    action: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+
+    action: String,
+    entity: String,
+    entityId: String,
+
     timestamp: {
       type: Date,
       default: Date.now,
@@ -19,8 +18,5 @@ const activityLogSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-activityLogSchema.index({ userId: 1, timestamp: -1 });
-activityLogSchema.index({ action: 1 });
 
 module.exports = mongoose.model("ActivityLog", activityLogSchema);

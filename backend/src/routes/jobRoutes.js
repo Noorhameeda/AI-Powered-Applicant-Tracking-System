@@ -7,41 +7,28 @@ const {
   getJobById,
   updateJob,
   deleteJob,
+  searchJobs,
 } = require("../controllers/jobController");
 
 const { protect } = require("../middleware/authMiddleware");
-const {
-  isRecruiter,
-} = require("../middleware/roleMiddleware");
+const { isRecruiter } = require("../middleware/roleMiddleware");
 
-// Create Job
-router.post(
-  "/create",
-  protect,
-  isRecruiter,
-  createJob
-);
+/* CREATE */
+router.post("/create", protect, isRecruiter, createJob);
 
-// Get All Jobs
+/* GET ALL */
 router.get("/", getJobs);
 
-// Get Single Job
+/* SEARCH (MUST BE ABOVE :id) */
+router.get("/search", searchJobs);
+
+/* GET BY ID */
 router.get("/:id", getJobById);
 
-// Update Job
-router.put(
-  "/:id",
-  protect,
-  isRecruiter,
-  updateJob
-);
+/* UPDATE */
+router.put("/:id", protect, isRecruiter, updateJob);
 
-// Delete Job
-router.delete(
-  "/:id",
-  protect,
-  isRecruiter,
-  deleteJob
-);
+/* DELETE */
+router.delete("/:id", protect, isRecruiter, deleteJob);
 
 module.exports = router;

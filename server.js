@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const connectDB = require("./config/db");
+
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
   res.send("ATS Backend Running");
 });
 
+/* ROUTES */
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
 

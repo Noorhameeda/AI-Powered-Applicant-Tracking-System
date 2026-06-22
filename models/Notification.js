@@ -7,16 +7,16 @@ const notificationSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    title: {
+
+    title: String,
+    message: String,
+
+    type: {
       type: String,
-      required: true,
-      trim: true,
+      enum: ["Interview", "Shortlisted", "Rejected", "Offer", "General"],
+      default: "General",
     },
-    message: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+
     read: {
       type: Boolean,
       default: false,
@@ -24,8 +24,5 @@ const notificationSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-notificationSchema.index({ userId: 1, read: 1 });
-notificationSchema.index({ createdAt: -1 });
 
 module.exports = mongoose.model("Notification", notificationSchema);

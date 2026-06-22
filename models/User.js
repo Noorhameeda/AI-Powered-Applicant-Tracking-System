@@ -7,69 +7,28 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+
     email: {
       type: String,
       required: true,
       unique: true,
       lowercase: true,
-      trim: true,
     },
+
     password: {
       type: String,
       required: true,
     },
+
     role: {
       type: String,
-      enum: ["applicant", "recruiter", "admin"],
-      default: "applicant",
-    },
-    profileImage: {
-      type: String,
-      default: "",
-    },
-    phone: {
-      type: String,
-      trim: true,
-      default: "",
-    },
-    skills: {
-      type: [String],
-      default: [],
-    },
-    experience: {
-      type: String,
-      default: "",
-    },
-    education: {
-      type: String,
-      default: "",
+      enum: ["candidate", "recruiter", "admin"],
+      default: "candidate",
     },
   },
-  {
-    timestamps: true,
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true },
-  }
+  { timestamps: true }
 );
 
-userSchema.index({ email: 1 }, { unique: true });
-
-userSchema.virtual("jobs", {
-  ref: "Job",
-  localField: "_id",
-  foreignField: "recruiterId",
-});
-
-userSchema.virtual("applications", {
-  ref: "Application",
-  localField: "_id",
-  foreignField: "applicantId",
-});
-
-userSchema.virtual("resumes", {
-  ref: "Resume",
-  localField: "_id",
-  foreignField: "applicantId",
-});
+userSchema.index({ name: 1 });
 
 module.exports = mongoose.model("User", userSchema);
