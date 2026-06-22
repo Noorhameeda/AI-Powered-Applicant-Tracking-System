@@ -1,4 +1,5 @@
 const express = require("express");
+
 const {
   applyJob,
   deleteApplication,
@@ -6,6 +7,7 @@ const {
   getApplications,
   updateApplicationStatus,
 } = require("../controllers/applicationController");
+
 const { protect } = require("../middlewares/authMiddleware");
 
 const router = express.Router();

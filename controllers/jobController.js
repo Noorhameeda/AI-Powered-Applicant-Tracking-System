@@ -1,4 +1,5 @@
 const Job = require("../models/Job");
+const ActivityLog = require("../models/ActivityLog");
 
 const validateJobPayload = (payload) => {
   const errors = [];
@@ -48,6 +49,11 @@ const createJob = async (req, res) => {
       salary: Number(req.body.salary),
       location: req.body.location,
       recruiterId: req.user?._id,
+    });
+
+    await ActivityLog.create({
+      action: "Job Created",
+      user: req.user?._id,
     });
 
     return res.status(201).json({
@@ -164,7 +170,6 @@ const deleteJob = async (req, res) => {
   }
 };
 
-// Text Search Jobs
 const searchJobs = async (req, res) => {
   try {
     const { keyword } = req.query;
