@@ -30,6 +30,18 @@ const applicationSchema = new mongoose.Schema(
       default: 0,
     },
 
+    matchedSkills: [
+      {
+        type: String,
+      },
+    ],
+
+    missingSkills: [
+      {
+        type: String,
+      },
+    ],
+
     appliedAt: {
       type: Date,
       default: Date.now,
