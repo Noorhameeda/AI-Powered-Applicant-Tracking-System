@@ -36,6 +36,16 @@ const jobSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+
+    experience: {
+      type: Number,
+      default: 0,
+    },
+
+    recruiter: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,
