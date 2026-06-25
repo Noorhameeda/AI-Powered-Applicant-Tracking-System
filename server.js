@@ -13,6 +13,7 @@ const notificationRoutes = require("./routes/notificationRoutes");
 const activityRoutes = require("./routes/activityRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
+const emailRoutes = require("./routes/emailRoutes");
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use("/api/notifications", notificationRoutes);
 app.use("/api/activity", activityRoutes);
 app.use("/api/ai", aiRoutes);
 app.use("/api/analytics", analyticsRoutes);
+app.use("/api/email", emailRoutes);
 
 const PORT = process.env.PORT || 5000;
 
