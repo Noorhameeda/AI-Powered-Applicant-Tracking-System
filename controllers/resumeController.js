@@ -1,11 +1,15 @@
+const { extractTextFromPDF } = require("../backend/src/services/pdfService");
 const Resume = require("../models/Resume");
 const ActivityLog = require("../models/ActivityLog");
 
 const uploadResume = async (req, res) => {
   try {
+    const extractedText = await extractTextFromPDF(req.file.path);
+
     const resume = await Resume.create({
-      user: req.user?._id,
-      resumeUrl: req.body.resumeUrl,
+      applicantId: req.user?._id,
+      fileUrl: req.file.path,
+      extractedText,
     });
 
     await ActivityLog.create({
