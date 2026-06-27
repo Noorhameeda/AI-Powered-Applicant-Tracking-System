@@ -11,6 +11,6 @@ router.post("/analyze", analyzeApplication);
 
 router.get("/rankings", getRankings);
 
-router.get("/:applicationId", getApplicationAnalysis);
+router.get("/report/:applicationId", getApplicationAnalysis);
 
 module.exports = router;
