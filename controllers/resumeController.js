@@ -1,33 +1,45 @@
-const { extractTextFromPDF } = require("../backend/src/services/pdfService");
-const Resume = require("../models/Resume");
-const ActivityLog = require("../models/ActivityLog");
+const Application = require("../models/Application");
 
-const uploadResume = async (req, res) => {
+// Upload Resume
+exports.uploadResume = async (req, res) => {
   try {
-    const extractedText = await extractTextFromPDF(req.file.path);
-
-    const resume = await Resume.create({
-      applicantId: req.user?._id,
-      fileUrl: req.file.path,
-      extractedText,
-    });
-
-    await ActivityLog.create({
-      action: "Resume Uploaded",
-      user: req.user?._id,
-    });
-
-    res.status(201).json({
+    res.status(200).json({
+      success: true,
       message: "Resume uploaded successfully",
-      resume,
+      file: req.file || null,
     });
   } catch (error) {
     res.status(500).json({
+      success: false,
       message: error.message,
     });
   }
 };
 
-module.exports = {
-  uploadResume,
+// Download Resume
+exports.downloadResume = async (req, res) => {
+  try {
+    const application = await Application.findById(req.params.id);
+
+    if (!application) {
+      return res.status(404).json({
+        success: false,
+        message: "Application not found",
+      });
+    }
+
+    if (!application.resumeUrl) {
+      return res.status(404).json({
+        success: false,
+        message: "Resume not found",
+      });
+    }
+
+    return res.redirect(application.resumeUrl);
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
 };

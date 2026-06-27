@@ -1,23 +1,16 @@
 const express = require("express");
-
-const {
-  getCandidateRanking,
-  getAdminDashboard,
-  getApplicantDashboard,
-  getChartsData,
-  getActivityAnalytics,
-} = require("../controllers/analyticsController");
-
 const router = express.Router();
 
-router.get("/ranking", getCandidateRanking);
+const {
+getRecruiterAnalytics,
+getJobAnalytics,
+getCandidateAnalytics,
+} = require("../controllers/analyticsController");
 
-router.get("/dashboard/admin", getAdminDashboard);
+router.get("/recruiter", getRecruiterAnalytics);
 
-router.get("/dashboard/applicant", getApplicantDashboard);
+router.get("/jobs/:id", getJobAnalytics);
 
-router.get("/charts", getChartsData);
-
-router.get("/activity", getActivityAnalytics);
+router.get("/candidates", getCandidateAnalytics);
 
 module.exports = router;
