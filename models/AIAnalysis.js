@@ -6,39 +6,22 @@ const aiAnalysisSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Application",
       required: true,
-      unique: true
+      index: true, // keep index here OR use schema.index, not both
     },
+
     score: {
       type: Number,
-      required: true,
-      min: 0,
-      max: 100
+      default: 0,
     },
-    summary: {
+
+    feedback: {
       type: String,
-      default: ""
     },
-    matchedSkills: {
-      type: [String],
-      default: []
-    },
-    missingSkills: {
-      type: [String],
-      default: []
-    },
-    strengths: {
-      type: [String],
-      default: []
-    },
-    weaknesses: {
-      type: [String],
-      default: []
-    }
   },
   { timestamps: true }
 );
 
-aiAnalysisSchema.index({ applicationId: 1 }, { unique: true });
-aiAnalysisSchema.index({ score: -1 });
+// ❌ REMOVE THIS LINE if present
+// aiAnalysisSchema.index({ applicationId: 1 });
 
 module.exports = mongoose.model("AIAnalysis", aiAnalysisSchema);

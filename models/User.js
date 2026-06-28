@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+      index: true, // optional (keep if you want search optimization)
     },
 
     email: {
@@ -13,6 +14,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
+      trim: true,
     },
 
     password: {
@@ -29,6 +31,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.index({ name: 1 });
+// ❌ REMOVE THIS (causes duplicate index warning)
+// userSchema.index({ email: 1 });
 
 module.exports = mongoose.model("User", userSchema);

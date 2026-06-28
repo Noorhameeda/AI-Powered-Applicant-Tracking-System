@@ -50,7 +50,11 @@ const applicationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Prevent duplicate applications
 applicationSchema.index({ user: 1, job: 1 }, { unique: true });
+
+// Search & Performance Indexes
+applicationSchema.index({ user: 1 });
 applicationSchema.index({ job: 1 });
 applicationSchema.index({ status: 1 });
 applicationSchema.index({ aiScore: -1 });

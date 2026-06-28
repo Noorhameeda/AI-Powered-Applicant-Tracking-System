@@ -18,18 +18,23 @@ const { isRecruiter } = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
-router.post("/create", protect, isRecruiter(), createJob);
+// CREATE JOB
+router.post("/create", protect, isRecruiter, createJob);
 
+// GET ALL JOBS
 router.get("/", getJobs);
 
-// SEARCH ROUTES MUST COME BEFORE :id
+// SEARCH & FILTER (must be before /:id)
 router.get("/search", searchJobs);
 router.get("/filter", filterJobs);
 
+// GET SINGLE JOB
 router.get("/:id", getJobById);
 
-router.put("/:id", protect, isRecruiter(), updateJob);
+// UPDATE JOB
+router.put("/:id", protect, isRecruiter, updateJob);
 
-router.delete("/:id", protect, isRecruiter(), deleteJob);
+// DELETE JOB
+router.delete("/:id", protect, isRecruiter, deleteJob);
 
 module.exports = router;

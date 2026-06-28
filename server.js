@@ -20,12 +20,12 @@ const notificationRoutes = require("./routes/notificationRoutes");
 const activityRoutes = require("./routes/activityRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
-<<<<<<< HEAD
+
 const adminRoutes = require("./routes/adminRoutes");
 const interviewRoutes = require("./routes/interviewRoutes");
-=======
+
 const emailRoutes = require("./routes/emailRoutes");
->>>>>>> b247880fc1e0084c4874f26079ec810f0d2ce6a2
+
 
 const app = express();
 

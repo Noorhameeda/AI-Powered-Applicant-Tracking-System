@@ -39,4 +39,10 @@ const interviewSchema = new mongoose.Schema(
   }
 );
 
+// Performance Indexes
+interviewSchema.index({ candidateId: 1 });
+interviewSchema.index({ recruiterId: 1 });
+interviewSchema.index({ applicationId: 1 });
+interviewSchema.index({ status: 1 });
+
 module.exports = mongoose.model("Interview", interviewSchema);

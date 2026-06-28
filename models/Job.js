@@ -66,4 +66,11 @@ jobSchema.index({
   company: "text",
 });
 
+// Optimization Index
+jobSchema.index({
+  title: "text",
+  location: "text",
+  company: "text",
+});
+
 module.exports = mongoose.model("Job", jobSchema);
