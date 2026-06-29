@@ -27,12 +27,14 @@ const register = async (req, res) => {
 
     if (!name || !email || !password) {
       return res.status(400).json({
+        success: false,
         message: "Name, email, and password are required",
       });
     }
 
     if (!["applicant", "recruiter", "admin"].includes(role)) {
       return res.status(400).json({
+        success: false,
         message: "Invalid role",
       });
     }
@@ -43,6 +45,7 @@ const register = async (req, res) => {
 
     if (existingUser) {
       return res.status(409).json({
+        success: false,
         message: "User already exists",
       });
     }
@@ -57,14 +60,17 @@ const register = async (req, res) => {
     });
 
     return res.status(201).json({
+      success: true,
       message: "Registration successful",
-      token: generateToken(user._id),
-      user: sanitizeUser(user),
+      data: {
+        token: generateToken(user._id),
+        user: sanitizeUser(user),
+      },
     });
   } catch (error) {
     return res.status(500).json({
+      success: false,
       message: "Registration failed",
-      error: error.message,
     });
   }
 };
@@ -75,6 +81,7 @@ const login = async (req, res) => {
 
     if (!email || !password) {
       return res.status(400).json({
+        success: false,
         message: "Email and password are required",
       });
     }
@@ -85,6 +92,7 @@ const login = async (req, res) => {
 
     if (!user) {
       return res.status(401).json({
+        success: false,
         message: "Invalid email or password",
       });
     }
@@ -96,11 +104,11 @@ const login = async (req, res) => {
 
     if (!passwordMatches) {
       return res.status(401).json({
+        success: false,
         message: "Invalid email or password",
       });
     }
 
-    // Audit Log
     await logAction(
       "USER_LOGIN",
       user._id,
@@ -110,22 +118,27 @@ const login = async (req, res) => {
       }
     );
 
-    return res.json({
+    return res.status(200).json({
+      success: true,
       message: "Login successful",
-      token: generateToken(user._id),
-      user: sanitizeUser(user),
+      data: {
+        token: generateToken(user._id),
+        user: sanitizeUser(user),
+      },
     });
   } catch (error) {
     return res.status(500).json({
+      success: false,
       message: "Login failed",
-      error: error.message,
     });
   }
 };
 
 const profile = async (req, res) => {
-  return res.json({
-    user: sanitizeUser(req.user),
+  return res.status(200).json({
+    success: true,
+    message: "Profile retrieved successfully",
+    data: sanitizeUser(req.user),
   });
 };
 

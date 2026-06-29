@@ -52,13 +52,15 @@ const analyzeApplication = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      ...analysis,
+      message: "Resume analyzed successfully",
+      data: analysis,
     });
   } catch (error) {
     return res.status(error.statusCode || 500).json({
       success: false,
-      message: "Failed to analyze resume",
-      error: error.message,
+      message: error.statusCode === 404
+        ? "Application not found"
+        : "Failed to analyze resume",
     });
   }
 };
@@ -77,13 +79,13 @@ const getRankings = async (_req, res) => {
 
     return res.status(200).json({
       success: true,
-      rankings,
+      message: "AI rankings retrieved successfully",
+      data: rankings,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
       message: "Failed to fetch rankings",
-      error: error.message,
     });
   }
 };
@@ -103,18 +105,20 @@ const getApplicationAnalysis = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      score: analysis.score,
-      summary: analysis.summary,
-      matchedSkills: analysis.matchedSkills,
-      missingSkills: analysis.missingSkills,
-      strengths: analysis.strengths,
-      weaknesses: analysis.weaknesses,
+      message: "Analysis report retrieved successfully",
+      data: {
+        score: analysis.score,
+        summary: analysis.summary,
+        matchedSkills: analysis.matchedSkills,
+        missingSkills: analysis.missingSkills,
+        strengths: analysis.strengths,
+        weaknesses: analysis.weaknesses,
+      },
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
       message: "Failed to fetch analysis report",
-      error: error.message,
     });
   }
 };
